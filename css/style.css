@@ -1,4 +1,8 @@
 /* @import url(https://fonts.googleapis.com/css?family=Roboto); */
+*{
+    padding: 0;
+    margin: 0;
+}
 
 body{
     box-sizing: border-box;
@@ -7,6 +11,29 @@ body{
 
 div{
     box-sizing: border-box;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(175, 175, 175); 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(95, 95, 95); 
 }
 
 main{
@@ -25,6 +52,11 @@ main{
 
 .chart{
     /* max-width: 400px; */
-    overflow-x: scroll;
+    overflow-x: auto;
     overflow-y: hidden;
+    
+    padding: 5px;
+    border: 1px solid black;
+    border-radius:  7px;
+    margin: 5px;
 }
