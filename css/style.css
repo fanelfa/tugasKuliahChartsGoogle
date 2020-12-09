@@ -1,0 +1,30 @@
+/* @import url(https://fonts.googleapis.com/css?family=Roboto); */
+
+body{
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+div{
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    flex: 1;
+}
+
+.chart{
+    /* max-width: 400px; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
