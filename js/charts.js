@@ -1,4 +1,4 @@
-google.charts.load('current', { packages: ['corechart'] });
+google.charts.load('current', { packages: ['corechart', 'bar'] });
 
 
 
@@ -179,5 +179,48 @@ function drawAreaStrippedLine(){
     };
 
     var chart = new google.visualization.AreaChart(document.getElementById('AreaStrippedLine'));
+    chart.draw(data, options);
+}
+
+
+google.charts.setOnLoadCallback(drawBar);
+
+function drawBar() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'State');
+    data.addColumn('number', 'Change Off');
+    data.addColumn({ type: 'string', role: 'style' });
+
+    data.addRows([
+        ['CA', .07, '#0d47a1' ],
+        ['NY', .11, '#0288d1' ],
+        ['TX', .13, '#0288d1' ],
+        ['FL', .12, '#0288d1' ],
+        ['IL', .15, '#4fc3f7' ],
+        ['NI', .09, '#4fc3f7' ],
+        ['PA', .12, '#4fc3f7' ],
+        ['OH', .13, '#4fc3f7' ],
+    ])
+
+    var options = {
+        title: 'Proportion of Home Ownership By State',
+        width: 700,
+        height: 400,
+        legend: 'none',
+        bar: { groupWidth: '80%' },
+        hAxis: {
+            minValue: 0,
+            ticks: getLabel(0, .16, .02),
+            format: 'percent',
+            gridlines: {
+                color: 'transparent'
+            }
+        },
+        vAxis: {
+            minValue: 0,
+        },
+    };
+
+    var chart = new google.visualization.BarChart(document.getElementById('Bar'));
     chart.draw(data, options);
 }
