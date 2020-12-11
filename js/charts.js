@@ -1,4 +1,4 @@
-google.charts.load('current', { packages: ['corechart', 'bar'] });
+google.charts.load('current', { packages: ['corechart', 'bar', 'treemap'] });
 
 
 
@@ -223,4 +223,37 @@ function drawBar() {
 
     var chart = new google.visualization.BarChart(document.getElementById('Bar'));
     chart.draw(data, options);
+}
+
+
+google.charts.setOnLoadCallback(drawTreeMap);
+
+function drawTreeMap(){
+    var data = google.visualization.arrayToDataTable([
+        ['Location', 'Parent', 'size', 'color'],
+        ['Global', null, 0, 0],
+        ['CA', 'Global', 40, 40],
+        ['NY', 'Global', 20, 30],
+        ['FL', 'Global', 16, 35],
+        ['TX', 'Global', 16, 23],
+        ['NJ', 'Global', 8, 30],
+        ['PA', 'Global', 7, 8],
+        ['IL', 'Global', 7, 12],
+        ['OH', 'Global', 7, 3],
+        ['VA', 'Global', 7, 18],
+        ['GA', 'Global', 5, 15],
+    ]);
+
+    tree = new google.visualization.TreeMap(document.getElementById('TreeMap'));
+
+    tree.draw(data, {
+        title: 'Top 10 States Maxsimum % of Charged Off Loans',
+        height: 400,
+        minColor: '#e1f5fe',
+        midColor: '#0288d1',
+        maxColor: '#0d47a1',
+        headerHeight: 15,
+        fontColor: 'black',
+        showScale: true
+    });
 }
