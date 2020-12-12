@@ -1,4 +1,7 @@
-google.charts.load('current', { packages: ['corechart', 'bar', 'treemap'] });
+google.charts.load('current', {
+    packages: ['corechart', 'bar', 'treemap', 'geochart'],
+    mapsApiKey: 'AIzaSyC9k8r0vjTs9k5ecs_r3Ltq-JTg7r4wq1A',
+});
 
 
 
@@ -244,9 +247,7 @@ function drawTreeMap(){
         ['GA', 'Global', 5, 15],
     ]);
 
-    tree = new google.visualization.TreeMap(document.getElementById('TreeMap'));
-
-    tree.draw(data, {
+    var options = {
         title: 'Top 10 States Maxsimum % of Charged Off Loans',
         height: 400,
         minColor: '#e1f5fe',
@@ -255,5 +256,76 @@ function drawTreeMap(){
         headerHeight: 15,
         fontColor: 'black',
         showScale: true
-    });
+    };
+
+    tree = new google.visualization.TreeMap(document.getElementById('TreeMap'));
+
+    tree.draw(data, options);
 }
+
+
+google.charts.setOnLoadCallback(drawGeo);
+
+function drawGeo(){
+    var data = google.visualization.arrayToDataTable([
+        ['State', 'Popularity'],
+        ['New York', 200],
+        ['Nevada', 100],
+        ['North Dakota', 100],
+        ['South Dakota', 100],
+        ['Washington', 130],
+        ['New Mexico', 100],
+        ['Georgia', 200],
+        ['Michigan', 100],
+        ['Indiana', 100],
+        ['Virginia', 150],
+        ['West Virginia', 100],
+        ['Kansas', 100],
+        ['Kentucky', 100],
+        ['Moniana', 100],
+        ['Texas', 100],
+    ]);
+
+    var options = {
+        region: 'US',
+        resolution: 'provinces',
+        displayMode: 'markers',
+        colorAxis: { colors: ['#0288d1', '#0d47a1'] },
+        // magnifyingGlass: { enable: true, zoomFactor: 7.5 },
+        sizeAxis: {minSize: 5},
+        tooltip: { textStyle: { color: '#0d47a1' }, showColorCode: true },
+    };
+
+    var chart = new google.visualization.GeoChart(document.getElementById('Geo'));
+
+    chart.draw(data, options);
+}
+
+
+
+// function drawRegionsMap() {
+//     var data = google.visualization.arrayToDataTable([
+//         ['City', 'Population', 'Area'],
+//         ['Rome', 2761477, 1285.31],
+//         ['Milan', 1324110, 181.76],
+//         ['Naples', 959574, 117.27],
+//         ['Turin', 907563, 130.17],
+//         ['Palermo', 655875, 158.9],
+//         ['Genoa', 607906, 243.60],
+//         ['Bologna', 380181, 140.7],
+//         ['Florence', 371282, 102.41],
+//         ['Fiumicino', 67370, 213.44],
+//         ['Anzio', 52192, 43.43],
+//         ['Ciampino', 38262, 11]
+//     ]);
+
+//     var options = {
+//         region: 'IT',
+//         displayMode: 'markers',
+//         colorAxis: { colors: ['green', 'blue'] }
+//     };
+
+//     var chart = new google.visualization.GeoChart(document.getElementById('Geo'));
+
+//     chart.draw(data, options);
+// }
