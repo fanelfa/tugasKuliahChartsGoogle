@@ -83,6 +83,12 @@ main{
   align-items: center;
 
   color: grey;
+
+  background-color: white;
+}
+
+.card:hover{
+  box-shadow: 0 3px 11px rgba(163, 169, 170, 0.384);
 }
 
 .card .title{
