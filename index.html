@@ -5,40 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
+    <!-- JQuery UI -->
+    <link rel="stylesheet" href="js/jquery-ui-1.12.1/jquery-ui.min.css">
+    
     <link rel="stylesheet" href="css/style.css">
-
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
     <main>
         <div class="row">
-            <div class="column chart">
-                <div id="TreeMap"></div>
+            <div class="column">
+                <div class="card container">
+                    <div class="title">
+                        total number of loans
+                    </div>
+                    <div class="body">
+                        466.29K
+                    </div>
+                </div>
             </div>
-            <div class="column chart">
+            <div class="column">
+                <div class="card container">
+                    <div class="title">
+                        total funded amount
+                    </div>
+                    <div class="body">
+                        $6.66bn
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card container">
+                    <div class="title">
+                        total changed of loans
+                    </div>
+                    <div class="body">
+                        42.48K
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card container">
+                    <div class="title">
+                        total current loans
+                    </div>
+                    <div class="body">
+                        224.23K
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card container">
+                    <div class="title">
+                        average interest rate %
+                    </div>
+                    <div class="body">
+                        13.83
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="card container">
+                    <div class="title">
+                        average DTI
+                    </div>
+                    <div class="body">
+                        17.22
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column column-half">
+                <div class="row">
+                    <div class="column">
+                        <div class="card container">
+                            <div class="title">
+                                loan issue date
+                            </div>
+                            <div class="body" style="box-sizing: border-box;">
+                                <div class="column">
+                                    <div class="row">
+                                        <input class="mr-2" type="date" name="startDate">
+                                        <input type="date" name="endDate">
+                                    </div>
+                                    <div class="row" style="margin-top: 20px;">
+                                        <div style="width: 100%;">
+                                            <div id="slider-range"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card container">
+                            <div class="title">
+                                state
+                            </div>
+                            <div class="body">
+                                <select class="select" name="selectState" id="selectState">
+                                    <option value="All">All</option>
+                                    <option value="New Mexico">New Mexico</option>
+                                    <option value="Washington">Washington</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container chart">
+                    <div id="TreeMap"></div>
+                </div>
+            </div>
+            <div class="column chart container">
                 <div id="BarLine"></div>
             </div>
         </div>
         <div class="row">
-            <div class="column chart">
+            <div class="column chart container">
                 <div id="Geo"></div>
             </div>
-            <div class="column chart">
+            <div class="column chart container">
                 <div id="AreaSolidLine"></div>
             </div>
         </div>
         <div class="row">
-            <div class="column chart">
+            <div class="column chart container">
                 <div id="AreaStrippedLine"></div>
             </div>
-            <div class="column chart">
+            <div class="column chart container">
                 <div id="Bar"></div>
             </div>
         </div>
     </main>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> -->
+
+    
+    <!--Load the AJAX API Google Chart-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="js/charts.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <!-- JQuery UI -->
+    <script src="js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    
+    <script src="js/range.js"></script>
 </body>
 </html>

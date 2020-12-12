@@ -284,6 +284,8 @@ function drawGeo(){
         ['Kentucky', 100],
         ['Moniana', 100],
         ['Texas', 100],
+        ['Oregon', 100],
+        ['Missouri', 100],
     ]);
 
     var options = {
