@@ -2,6 +2,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Quicksand', sans-serif;
 }
 
 body{
@@ -123,4 +124,22 @@ main{
 .ui-slider .ui-slider-handle{
   height: 1rem;
   width: 1rem;
+}
+
+
+.table{
+  width: 100%;
+  overflow: auto;
+}
+
+#myTable thead tr th{
+  background-color: rgb(186, 188, 189);
+}
+
+.tright{
+  text-align: right;
+}
+
+.tcenter{
+  text-align: center;
 }
